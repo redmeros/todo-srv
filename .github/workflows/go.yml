@@ -23,3 +23,10 @@ jobs:
 
     - name: Build
       run: go build -v .
+
+    - name: Create Release
+      uses: softprops/action-gh-release@v2
+      with:
+        files: todosrv
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
